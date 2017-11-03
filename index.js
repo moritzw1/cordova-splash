@@ -20,7 +20,6 @@ settings.STORYBOARD = argv['use-storyboard'] || false;
  * Check which platforms are added to the project and return their splash screen names and sizes
  *
  * @param  {String} projectName
- * @var {Object} console utils
  * @return {Promise} resolves with an array of platforms
  */
 var getPlatforms = function (projectName) {

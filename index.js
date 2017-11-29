@@ -25,32 +25,32 @@ settings.STORYBOARD = argv['use-storyboard'] || false;
 var getPlatforms = function (projectName) {
   var deferred = Q.defer();
   var platforms = [];
-  var xcodeFolder = '/Images.xcassets/LaunchImage.launchimage/';
+  // var xcodeFolder = '/Images.xcassets/LaunchImage.launchimage/';
 
-  if (settings.OLD_XCODE_PATH) {
-    xcodeFolder = '/Resources/splash/';
-  } else if (settings.STORYBOARD) {
+  // if (settings.OLD_XCODE_PATH) {
+  //   xcodeFolder = '/Resources/splash/';
+  // } else if (settings.STORYBOARD) {
     xcodeFolder = '/Images.xcassets/LaunchStoryboard.imageset/'
-  }
+  // }
 
-  var splashImages = [
-    // iPhone
-    { name: 'Default~iphone.png', width: 320, height: 480 },
-    { name: 'Default@2x~iphone.png', width: 640, height: 960 },
-    { name: 'Default-568h@2x~iphone.png', width: 640, height: 1136 },
-    { name: 'Default-667h.png', width: 750, height: 1334 },
-    { name: 'Default-736h.png', width: 1242, height: 2208 },
-    { name: 'Default-Landscape-736h.png', width: 2208, height: 1242 },
-    // { name: 'Default-2436h.png', width: 1125, height: 2436 },
-    // { name: 'Default-Landscape-2436h.png', width: 2436, height: 1125 },
-    // iPad
-    { name: 'Default-Portrait~ipad.png', width: 768, height: 1024 },
-    { name: 'Default-Portrait@2x~ipad.png', width: 1536, height: 2048 },
-    { name: 'Default-Landscape~ipad.png', width: 1024, height: 768 },
-    { name: 'Default-Landscape@2x~ipad.png', width: 2048, height: 1536 }
-  ]
+  // var splashImages = [
+  //   // iPhone
+  //   { name: 'Default~iphone.png', width: 320, height: 480 },
+  //   { name: 'Default@2x~iphone.png', width: 640, height: 960 },
+  //   { name: 'Default-568h@2x~iphone.png', width: 640, height: 1136 },
+  //   { name: 'Default-667h.png', width: 750, height: 1334 },
+  //   { name: 'Default-736h.png', width: 1242, height: 2208 },
+  //   { name: 'Default-Landscape-736h.png', width: 2208, height: 1242 },
+  //   // { name: 'Default-2436h.png', width: 1125, height: 2436 },
+  //   // { name: 'Default-Landscape-2436h.png', width: 2436, height: 1125 },
+  //   // iPad
+  //   { name: 'Default-Portrait~ipad.png', width: 768, height: 1024 },
+  //   { name: 'Default-Portrait@2x~ipad.png', width: 1536, height: 2048 },
+  //   { name: 'Default-Landscape~ipad.png', width: 1024, height: 768 },
+  //   { name: 'Default-Landscape@2x~ipad.png', width: 2048, height: 1536 }
+  // ]
 
-  if (settings.STORYBOARD) {
+  // if (settings.STORYBOARD) {
     splashImages = [
       { name: 'Default@2x~universal~anyany.png', width: 1334, height: 1334 },
       { name: 'Default@2x~universal~comany.png', width: 750, height: 1334 },
@@ -59,7 +59,7 @@ var getPlatforms = function (projectName) {
       { name: 'Default@3x~universal~anycom.png', width: 2208, height: 1242 },
       { name: 'Default@3x~universal~comany.png', width: 1242, height: 2208 },
     ]
-  }
+  // }
 
   platforms.push({
     name: 'ios',
@@ -191,7 +191,7 @@ var generateSplash = function (platform, splash) {
   ig.crop({
     srcPath: srcPath,
     dstPath: dstPath,
-    quality: 1,
+    quality: 0.5,
     format: 'png',
     width: splash.width,
     height: splash.height

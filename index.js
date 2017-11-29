@@ -15,6 +15,7 @@ settings.CONFIG_FILE = argv.config || 'config.xml';
 settings.SPLASH_FILE = argv.splash || 'splash.png';
 settings.OLD_XCODE_PATH = argv['xcode-old'] || false;
 settings.STORYBOARD = argv['use-storyboard'] || false;
+settings.QUALITY = argv['quality'] || 1;
 
 /**
  * Check which platforms are added to the project and return their splash screen names and sizes
@@ -191,7 +192,7 @@ var generateSplash = function (platform, splash) {
   ig.crop({
     srcPath: srcPath,
     dstPath: dstPath,
-    quality: 0.5,
+    quality: settings.QUALITY,
     format: 'png',
     width: splash.width,
     height: splash.height
